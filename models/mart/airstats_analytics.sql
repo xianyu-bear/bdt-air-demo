@@ -1,4 +1,4 @@
-WITH dim_airports_filtered AS (
+WITH dim_airports_closed AS (
     SELECT * FROM {{ ref('dim_airports_closed') }}
 ),
 dim_airports_freqs_aggregated AS (

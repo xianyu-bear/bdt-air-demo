@@ -36,3 +36,9 @@ models:
     src:
       +materialized: table
       +schema: source
+    dim:
+      +materialized: table
+      +schema: dimension
+    mart:
+      +materialized: table
+      +schema: mart
