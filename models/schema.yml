@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: dim_airports_open
+    description: Filtered out closed airports
+    columns:
+
+      - name: airport_ident
+        description: Primary key and foreign key
+        data_tests:
+          - unique      
+          - not_null
+          - relationships:
+              to: ref('airstats_analytics')
+              field: airport_ident
+              # if each airport_ident in dim_airport_open exists in airstats_analytics
+
+      - name: airport_type
+        description: The type of the airport. 
+        data_tests:
+          - accepted_values:
+              values: ['heliport', 'balloonport', 'seaplane_base', 'small_airport', 'medium_airport', 'large_airport']   
+              #if there are only those 6 accepted values for airport_type column
+
+  - name: dim_airports_freqs_aggregated
+    description: Number of frequencies for each airport.
+    columns:
+      - name: airport_ident
+        data_tests:
+          - not_null
+          - unique            
+  
+  - name: dim_navaids_aggregated
+    description: Number of navaids for each airport.
+    columns:
+      - name: airport_ident
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_runways_aggregated
+    description: Number of runways for each airport.
+    columns:
+      - name: airport_ident
+        data_tests:
+          - not_null
+          - unique
+          
+
+      

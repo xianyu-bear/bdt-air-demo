@@ -9,5 +9,7 @@ SELECT
     COUNT(navaid_id) as num_of_navaids,
 FROM
     src_navaids
+where 
+    airport_ident is not null
 GROUP BY
     airport_ident

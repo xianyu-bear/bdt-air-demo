@@ -1,5 +1,5 @@
-WITH dim_airports_closed AS (
-    SELECT * FROM {{ ref('dim_airports_closed') }}
+WITH dim_airports_open AS (
+    SELECT * FROM {{ ref('dim_airports_open') }}
 ),
 dim_airports_freqs_aggregated AS (
     SELECT * FROM {{ ref('dim_airports_freqs_aggregated') }}
@@ -26,7 +26,7 @@ SELECT
   c.continent,
   sr.local_code
 FROM
-  dim_airports_closed a
+  dim_airports_open a
 LEFT JOIN 
   dim_airports_freqs_aggregated af
 USING (airport_ident)

@@ -15,3 +15,5 @@ FROM
     src_airports
 WHERE 
     airport_type != 'closed'
+and 
+    airport_ident is not null

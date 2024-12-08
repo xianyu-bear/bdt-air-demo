@@ -9,5 +9,7 @@ SELECT
     COUNT(airport_freq_id) as num_of_freqs,
 FROM
     src_airports_freqs
+where 
+    airport_ident is not null
 GROUP BY
     airport_ident

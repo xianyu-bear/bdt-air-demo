@@ -11,5 +11,7 @@ FROM
     src_runways
 WHERE 
     runway_closed = 0
+and 
+    airport_ident is not null
 GROUP BY
     airport_ident
