@@ -3,7 +3,7 @@ Welcome to your new dbt project!
 ### Using the starter project
 
 ![3 layers](./image.png)
-![3 schemas](./image(1).png)
+![3 schemas](./schemas_bcp.png)
 
 
 ### Resources:
